@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ad254381436c84bb92a563c4febfac, type: 3}
+  m_Name: EntitiesPrefabs
+  m_EditorClassIdentifier: 
+  penisTentacleLike: {fileID: 4206897245707938426, guid: d90c4e56c3d9f2247a76760e9deb1313,
+    type: 3}
+  toiletBrushHair: {fileID: 1300515100200398984, guid: 2b52320c9f4ef1b4db82411204f3ea13,
+    type: 3}
+  wormsInAHole: {fileID: 3198217458003567145, guid: 6c78e8dd565ea504bace88d11432760d,
+    type: 3}
+  crazyEyeball: {fileID: 3022518420352865181, guid: 890c9196efdb3d2409b6b00b86c5abdf,
+    type: 3}
+  voidBall: {fileID: 8747900723134632899, guid: e3ad526554333ae44a2fea9c1e100188,
+    type: 3}
+  palmPlant: {fileID: 218786811392226033, guid: 9b2805951ce566e44aa66e932c99f660,
+    type: 3}
+  fullMoon: {fileID: 4719675827761057164, guid: fe7e8d67bd67d21458149ddff3acc593,
+    type: 3}
+  regularSquare: {fileID: 3494360581253021272, guid: 0da8e0e430d42b749b1899af8719a9d8,
+    type: 3}
+  simpleSphere: {fileID: 4863056431600081761, guid: c78cdbbdd34ca8f4a8beaecea971a3a2,
+    type: 3}
+  cubicCube: {fileID: 1580872877699814153, guid: 099620aefe8abb7479215bb48b332d59,
+    type: 3}
+  longCube: {fileID: 2140037157850651455, guid: 203a1088ff37b314280578c8cd652bf5,
+    type: 3}
+  capsulePill: {fileID: 4168479167419572346, guid: bde79586623bd334dab7f162e81282d7,
+    type: 3}
