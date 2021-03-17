@@ -1719,11 +1719,11 @@ RectTransform:
   - {fileID: 137939432}
   - {fileID: 689814924}
   m_Father: {fileID: 1762354251}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.5, y: 0}
+  m_AnchoredPosition: {x: -96.487, y: 2.1327}
   m_SizeDelta: {x: 192.97443, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &627547226
