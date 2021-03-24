@@ -153,7 +153,7 @@ RectTransform:
   m_Children:
   - {fileID: 185389497}
   m_Father: {fileID: 1762354251}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -427,8 +427,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Start
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 04f5f4e2d9538994898aaa7c0e6c08a4, type: 2}
+  m_sharedMaterial: {fileID: -2889297292588557343, guid: 04f5f4e2d9538994898aaa7c0e6c08a4,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -642,8 +643,9 @@ MonoBehaviour:
   m_text: "Desarrollado en directo en https://twitch.tv/RothioTome. Muchas gracias
     a todas las personas que hab\xE9is estado durante el stream <3 <3"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 04f5f4e2d9538994898aaa7c0e6c08a4, type: 2}
+  m_sharedMaterial: {fileID: -2889297292588557343, guid: 04f5f4e2d9538994898aaa7c0e6c08a4,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -775,8 +777,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u200B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 04f5f4e2d9538994898aaa7c0e6c08a4, type: 2}
+  m_sharedMaterial: {fileID: -2889297292588557343, guid: 04f5f4e2d9538994898aaa7c0e6c08a4,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1030,8 +1033,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u200B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 04f5f4e2d9538994898aaa7c0e6c08a4, type: 2}
+  m_sharedMaterial: {fileID: -2889297292588557343, guid: 04f5f4e2d9538994898aaa7c0e6c08a4,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1166,8 +1170,9 @@ MonoBehaviour:
     game needs permission to read the stream chat. No data is storaged after the
     game nor sent anywhere.</size>\n\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 04f5f4e2d9538994898aaa7c0e6c08a4, type: 2}
+  m_sharedMaterial: {fileID: -2889297292588557343, guid: 04f5f4e2d9538994898aaa7c0e6c08a4,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1613,8 +1618,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 50
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 04f5f4e2d9538994898aaa7c0e6c08a4, type: 2}
+  m_sharedMaterial: {fileID: -2889297292588557343, guid: 04f5f4e2d9538994898aaa7c0e6c08a4,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1719,7 +1725,7 @@ RectTransform:
   - {fileID: 137939432}
   - {fileID: 689814924}
   m_Father: {fileID: 1762354251}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1831,8 +1837,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Allow more than 1 creature per user
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 04f5f4e2d9538994898aaa7c0e6c08a4, type: 2}
+  m_sharedMaterial: {fileID: -2889297292588557343, guid: 04f5f4e2d9538994898aaa7c0e6c08a4,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1964,8 +1971,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: User
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 04f5f4e2d9538994898aaa7c0e6c08a4, type: 2}
+  m_sharedMaterial: {fileID: -2889297292588557343, guid: 04f5f4e2d9538994898aaa7c0e6c08a4,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2573,8 +2581,9 @@ MonoBehaviour:
     * It is very important that the token <b>it''s not visible during the stream
     </b>. Fill this form off-screen. You can get your token at  https://twitchapps.com/tmi'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 04f5f4e2d9538994898aaa7c0e6c08a4, type: 2}
+  m_sharedMaterial: {fileID: -2889297292588557343, guid: 04f5f4e2d9538994898aaa7c0e6c08a4,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2755,8 +2764,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Enter text...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 04f5f4e2d9538994898aaa7c0e6c08a4, type: 2}
+  m_sharedMaterial: {fileID: -2889297292588557343, guid: 04f5f4e2d9538994898aaa7c0e6c08a4,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2975,8 +2985,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u200B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 04f5f4e2d9538994898aaa7c0e6c08a4, type: 2}
+  m_sharedMaterial: {fileID: -2889297292588557343, guid: 04f5f4e2d9538994898aaa7c0e6c08a4,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3160,8 +3171,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Channel
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 04f5f4e2d9538994898aaa7c0e6c08a4, type: 2}
+  m_sharedMaterial: {fileID: -2889297292588557343, guid: 04f5f4e2d9538994898aaa7c0e6c08a4,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3314,8 +3326,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Enter text...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 04f5f4e2d9538994898aaa7c0e6c08a4, type: 2}
+  m_sharedMaterial: {fileID: -2889297292588557343, guid: 04f5f4e2d9538994898aaa7c0e6c08a4,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3478,8 +3491,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Creature Limit
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 04f5f4e2d9538994898aaa7c0e6c08a4, type: 2}
+  m_sharedMaterial: {fileID: -2889297292588557343, guid: 04f5f4e2d9538994898aaa7c0e6c08a4,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3611,8 +3625,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Channel Token*
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 04f5f4e2d9538994898aaa7c0e6c08a4, type: 2}
+  m_sharedMaterial: {fileID: -2889297292588557343, guid: 04f5f4e2d9538994898aaa7c0e6c08a4,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3899,7 +3914,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 118, y: -170}
+  m_AnchoredPosition: {x: 95, y: -141}
   m_SizeDelta: {x: 695.99854, y: 47.941917}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2004796910
@@ -3923,7 +3938,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Error: check the information and try again'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 04f5f4e2d9538994898aaa7c0e6c08a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -3948,8 +3963,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3987,7 +4002,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 3.9948487, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &2004796911
@@ -4056,8 +4071,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u200B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 04f5f4e2d9538994898aaa7c0e6c08a4, type: 2}
+  m_sharedMaterial: {fileID: -2889297292588557343, guid: 04f5f4e2d9538994898aaa7c0e6c08a4,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4468,8 +4484,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Enter text...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 04f5f4e2d9538994898aaa7c0e6c08a4, type: 2}
+  m_sharedMaterial: {fileID: -2889297292588557343, guid: 04f5f4e2d9538994898aaa7c0e6c08a4,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
