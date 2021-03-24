@@ -45,6 +45,8 @@ public class Decoration : MonoBehaviour
         {
             body = Instantiate(_entitiesPrefabs.GetPrefabFromEnum(bodyEnum), transform).GetComponent<PartComponent>();
             body.SetPrimaryColor(primaryColor);
+            //GOD FORGIVE KILLING SPREE
+            body.SetAuthor(author);
         }
         else
         {
@@ -58,6 +60,8 @@ public class Decoration : MonoBehaviour
         Destroy(body.gameObject);
         body = Instantiate(_entitiesPrefabs.GetPrefabFromEnum(newBody), transform).GetComponent<PartComponent>();
         body.SetPrimaryColor(primaryColor);
+        //GOD FORGIVE KILLING SPREE
+        body.SetAuthor(author);
 
         AttachPartToBody(topPart, CommandArg.TOP);
         AttachPartToBody(frontPart, CommandArg.FRONT);

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class PartComponent : MonoBehaviour
 {
@@ -6,7 +7,8 @@ public class PartComponent : MonoBehaviour
     [SerializeField] private Renderer[] secondarySkins;
     [SerializeField] private bool hasMultipleMaterials = false;
     
-    //Soy un colgajo
+    //QUE NOS PERDONE DIOS A TODES
+    private string author = "";
     
     public void SetPrimaryColor(Color col)
     {
@@ -32,5 +34,15 @@ public class PartComponent : MonoBehaviour
         {
             mr.material.color = col;
         }
+    }
+
+    public string GetAuthor()
+    {
+        return author;
+    }
+
+    public void SetAuthor(string aut)
+    {
+        author = aut;
     }
 }
