@@ -280,5 +280,7 @@ public enum CommandArg
     BODYCOLOR,
     READY,
     RANDOMIZE,
-    COMMIT
+    COMMIT,
+    RANDOMISE,
+    RANDOM
 }

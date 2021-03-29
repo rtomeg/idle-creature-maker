@@ -15,8 +15,13 @@ public class GameController : MonoBehaviour
     private Dictionary<string, Decoration> decorationDict = new Dictionary<string, Decoration>();
     private List<Decoration> decorationList = new List<Decoration>();
 
+    [SerializeField] private AudioClip joinSound;
+    [SerializeField] private AudioClip commitSound;
+    private AudioSource audioSource;
+
     private void Awake()
     {
+        audioSource = FindObjectOfType<AudioSource>();
         maxCreatures = PlayerPrefs.GetInt(MAX_CREATURES_KEY);
         allowMultipleCreatures = PlayerPrefs.GetInt(ALLOW_MULTIPLE_CREATURES) != 0;
         EventsManager.onTwitchCommandReceived += CommandReceived;
@@ -40,6 +45,7 @@ public class GameController : MonoBehaviour
                 {
                     if (_playerSlots.GetPlayerSlotByName(twitchcommand.username)) return;
                     userPS.userJoin(twitchcommand.username);
+                    audioSource.PlayOneShot(joinSound);
                 }
 
                 break;
@@ -115,10 +121,13 @@ public class GameController : MonoBehaviour
                 if (_playerSlots.GetPlayerSlotByName(out userPS, twitchcommand.username))
                 {
                     userPS.UserReady();
+                    audioSource.PlayOneShot(commitSound);
                 }
 
                 break;
             case CommandArg.RANDOMIZE:
+            case CommandArg.RANDOM: 
+            case CommandArg.RANDOMISE:
                 if (_playerSlots.GetPlayerSlotByName(out userPS, twitchcommand.username))
                 {
                     userPS.Randomize();
