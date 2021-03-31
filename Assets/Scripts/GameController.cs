@@ -17,11 +17,10 @@ public class GameController : MonoBehaviour
 
     [SerializeField] private AudioClip joinSound;
     [SerializeField] private AudioClip commitSound;
-    private AudioSource audioSource;
+    [SerializeField] private AudioSource audioSource;
 
     private void Awake()
     {
-        audioSource = FindObjectOfType<AudioSource>();
         maxCreatures = PlayerPrefs.GetInt(MAX_CREATURES_KEY);
         allowMultipleCreatures = PlayerPrefs.GetInt(ALLOW_MULTIPLE_CREATURES) != 0;
         EventsManager.onTwitchCommandReceived += CommandReceived;
