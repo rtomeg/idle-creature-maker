@@ -23,33 +23,32 @@ public class GameController : MonoBehaviour
     {
         maxCreatures = PlayerPrefs.GetInt(MAX_CREATURES_KEY);
         allowMultipleCreatures = PlayerPrefs.GetInt(ALLOW_MULTIPLE_CREATURES) != 0;
-        EventsManager.onTwitchCommandReceived += CommandReceived;
         EventsManager.onCreatureStartParty += CreatureStartParty;
+        TwitchController.Instance.OnTwitchCommandReceived.AddListener(OnTwitchCommandReceived);
         _playerSlots = FindObjectsOfType<PlayerSlot>().ToList();
     }
 
-    private void OnDestroy()
+    private void OnTwitchCommandReceived(string username, string command, List<string> arguments)
     {
-        EventsManager.onTwitchCommandReceived -= CommandReceived;
-        EventsManager.onCreatureStartParty -= CreatureStartParty;
-    }
 
-    private void CommandReceived(TwitchCommand twitchcommand)
-    {
+        if (!Enum.TryParse(command, true, out CommandArg parsedCommand)) return;
+        
         PlayerSlot userPS;
-        switch (twitchcommand.argument)
+        bool hasArgument = arguments.Count > 0 && !string.IsNullOrEmpty(arguments[0]);
+        
+        switch (parsedCommand)
         {
-            case CommandArg.JOIN:
+             case CommandArg.JOIN:
                 if (_playerSlots.GetEmptySlot(out userPS))
                 {
-                    if (_playerSlots.GetPlayerSlotByName(twitchcommand.username)) return;
-                    userPS.userJoin(twitchcommand.username);
+                    if (_playerSlots.GetPlayerSlotByName(username)) return;
+                    userPS.userJoin(username);
                     audioSource.PlayOneShot(joinSound);
                 }
 
                 break;
             case CommandArg.LEAVE:
-                if (_playerSlots.GetPlayerSlotByName(out userPS, twitchcommand.username))
+                if (_playerSlots.GetPlayerSlotByName(out userPS, username))
                 {
                     userPS.UserLeave();
                 }
@@ -57,11 +56,11 @@ public class GameController : MonoBehaviour
                 break;
             case CommandArg.BODYCOLOR:
             case CommandArg.BODY:
-                if (_playerSlots.GetPlayerSlotByName(out userPS, twitchcommand.username))
+                if (_playerSlots.GetPlayerSlotByName(out userPS, username))
                 {
-                    if (!string.IsNullOrEmpty(twitchcommand.message))
+                    if(hasArgument)
                     {
-                        if (Int32.TryParse(twitchcommand.message, out int bodyNumber))
+                        if (Int32.TryParse(arguments[0], out int bodyNumber))
                         {
                             if (bodyNumber > 0 && bodyNumber < Enum.GetValues(typeof(BodyEnum)).Length)
                             {
@@ -70,12 +69,12 @@ public class GameController : MonoBehaviour
                             }
                         }
 
-                        if (customColors.TryGetValue(twitchcommand.message.ToUpper(), out string hexColor))
+                        if (customColors.TryGetValue(arguments[0].ToUpper(), out string hexColor))
                         {
-                            twitchcommand.message = hexColor;
+                            arguments[0] = hexColor;
                         }
 
-                        if (ColorUtility.TryParseHtmlString(twitchcommand.message, out Color pcol))
+                        if (ColorUtility.TryParseHtmlString(arguments[0], out Color pcol))
                         {
                             userPS.SetPrimaryColor(pcol);
                         }
@@ -89,25 +88,25 @@ public class GameController : MonoBehaviour
             case CommandArg.LEFT:
             case CommandArg.RIGHT:
             case CommandArg.BOTTOM:
-                if (_playerSlots.GetPlayerSlotByName(out userPS, twitchcommand.username))
+                if (_playerSlots.GetPlayerSlotByName(out userPS,username))
                 {
-                    if (!string.IsNullOrEmpty(twitchcommand.message))
+                    if (hasArgument)
                     {
-                        if (Int32.TryParse(twitchcommand.message, out int partNumber))
+                        if (Int32.TryParse(arguments[0], out int partNumber))
                         {
                             if (partNumber >= 0 && partNumber < Enum.GetValues(typeof(PartEnum)).Length)
                             {
                                 PartEnum partEnum = (PartEnum) partNumber;
-                                userPS.SetPart(partEnum, twitchcommand.argument);
+                                userPS.SetPart(partEnum, parsedCommand);
                             }
                         }
 
-                        if (customColors.TryGetValue(twitchcommand.message.ToUpper(), out string hexColor))
+                        if (customColors.TryGetValue(arguments[0].ToUpper(), out string hexColor))
                         {
-                            twitchcommand.message = hexColor;
+                            arguments[0] = hexColor;
                         }
 
-                        if (ColorUtility.TryParseHtmlString(twitchcommand.message, out Color scol))
+                        if (ColorUtility.TryParseHtmlString(arguments[0], out Color scol))
                         {
                             userPS.SetSecondaryColor(scol);
                         }
@@ -117,7 +116,7 @@ public class GameController : MonoBehaviour
                 break;
             case CommandArg.COMMIT:
             case CommandArg.READY:
-                if (_playerSlots.GetPlayerSlotByName(out userPS, twitchcommand.username))
+                if (_playerSlots.GetPlayerSlotByName(out userPS, username))
                 {
                     userPS.UserReady();
                     audioSource.PlayOneShot(commitSound);
@@ -125,9 +124,9 @@ public class GameController : MonoBehaviour
 
                 break;
             case CommandArg.RANDOMIZE:
-            case CommandArg.RANDOM: 
+            case CommandArg.RANDOM:
             case CommandArg.RANDOMISE:
-                if (_playerSlots.GetPlayerSlotByName(out userPS, twitchcommand.username))
+                if (_playerSlots.GetPlayerSlotByName(out userPS, username))
                 {
                     userPS.Randomize();
                 }
@@ -135,7 +134,14 @@ public class GameController : MonoBehaviour
                 break;
             default:
                 break;
+        
         }
+
+    }
+
+    private void OnDestroy()
+    {
+        EventsManager.onCreatureStartParty -= CreatureStartParty;
     }
 
     private void CreatureStartParty(Decoration decoration, string author)
@@ -327,6 +333,27 @@ public class GameController : MonoBehaviour
         {"DIMGRAY", "#696969"},
         {"DARKSLATEGRAY", "#2F4F4F"},
         {"DEMIGIANT", "#E13F7E"},
-        {"ROTHIO", "#E7E74E8"}
+        {"ROTHIO", "#E7E74E"},
+        {"MONTXO", "#0077B6"}
+
     };
+    
+    public enum CommandArg
+    {
+        JOIN,
+        LEAVE,
+        BODY,
+        TOP,
+        FRONT,
+        LEFT,
+        RIGHT,
+        BOTTOM,
+        PARTCOLOR,
+        BODYCOLOR,
+        READY,
+        RANDOMIZE,
+        COMMIT,
+        RANDOMISE,
+        RANDOM
+    }
 }

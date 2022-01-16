@@ -3,6 +3,7 @@ using System.Linq;
 using DG.Tweening;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using CommandArg = GameController.CommandArg;
 
 public class Decoration : MonoBehaviour
 {

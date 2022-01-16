@@ -97,7 +97,7 @@ public class PlayerSlot : MonoBehaviour
         decoration.SetPrimaryColor(color);
     }
 
-    public void SetPart(PartEnum partEnum, CommandArg twitchcommandArgument)
+    public void SetPart(PartEnum partEnum, GameController.CommandArg twitchcommandArgument)
     {
         PlayerAction();
         decoration.SetPart(partEnum, twitchcommandArgument);

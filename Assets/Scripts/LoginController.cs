@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Security;
+using System.Text.RegularExpressions;
 using TMPro;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
@@ -10,26 +11,29 @@ using UnityEngine.UI;
 
 public class LoginController : MonoBehaviour
 {
-    [SerializeField] private TMP_InputField usernameField;
-    [SerializeField] private TMP_InputField channelNameField;
-    [SerializeField] private TMP_InputField passwordField;
+    [SerializeField] private TMP_InputField channelName;
     [SerializeField] private TMP_InputField maxCreatureInput;
     [SerializeField] private Toggle allowMultipleCreatures;
 
-    [SerializeField] private Button startButton;
-    [SerializeField] private GameObject errorText;
+    [SerializeField] private Button playButton;
+    [SerializeField] private Button connectToChannelButton;
+    [SerializeField] private TextMeshProUGUI errorText;
     [SerializeField] private GameObject loading;
 
     private TwitchController twitchController;
-    private float timeout = 4;
-    private float timer;
-    private bool tryingToConnect;
+    
+    private bool testingConnection;
+
+    
+    private static string usernameKey = "username";
 
     private void Start()
     {
         twitchController = TwitchController.Instance;
         maxCreatureInput.text = PlayerPrefs.GetInt(GameController.MAX_CREATURES_KEY, 50).ToString();
         allowMultipleCreatures.isOn = PlayerPrefs.GetInt(GameController.ALLOW_MULTIPLE_CREATURES) != 0;
+        channelName.text = PlayerPrefs.GetString(usernameKey);
+        Application.targetFrameRate = 60;
     }
 
     public void StartGame()
@@ -41,54 +45,61 @@ public class LoginController : MonoBehaviour
         SceneManager.LoadScene("GameScene");
     }
 
-    private void Update()
+    public void OnTestConnectionButtonClick()
     {
-        if (tryingToConnect)
+        if (testingConnection) return;
+        testingConnection = true;
+        connectToChannelButton.interactable = false;
+        
+        if (!String.IsNullOrEmpty(channelName.text))
         {
-            if (timer <= timeout)
+            int startIndex = channelName.text.IndexOf(".tv/") == -1 ? 0 : channelName.text.IndexOf(".tv/") + 4;
+            channelName.text = channelName.text.TrimEnd('/');
+            string trimmedChannelName = channelName.text.Substring(startIndex, channelName.text.Length - startIndex);
+
+            if (Regex.IsMatch(trimmedChannelName, "(^[a-zA-Z0-9][\\w]{2,24})$"))
             {
-                timer += Time.deltaTime;
-            }
-            else
-            {
-                OnCountdownEnd();
+                StartCoroutine(TestConnection(trimmedChannelName));
+                return;
             }
         }
-
+        PrintErrorMessage("Channel Name not valid.", Color.red);
+        connectToChannelButton.interactable = true;
+        testingConnection = false;
+    }
+    
+    private IEnumerator TestConnection(string cName)
+    {
+        twitchController.Login(cName);
+        PrintErrorMessage("Connecting...", Color.cyan);
+        yield return new WaitForSeconds(2);
         if (twitchController.isConnected)
         {
-            StartGame();
+            Connected(true);
+        }
+        else
+        {
+            Connected(false);
         }
     }
-
-    public void TryLogin()
+    
+    private void Connected(bool connected)
     {
-        loading.SetActive(true);
-        modifyInputStatus(false);
-        tryingToConnect = true;
-        startButton.interactable = false;
-        twitchController.Login(usernameField.text, channelNameField.text, passwordField.text);
+        if (connected)
+        {
+            TwitchController.Instance.Initialize(channelName.text);
+        }
+        PrintErrorMessage(connected?"Connected!":"Connection Failed, please try again", connected?Color.white:Color.red);
+        playButton.interactable = connected;
+        channelName.interactable = !connected;
+        connectToChannelButton.interactable = !connected;
+        testingConnection = false;
+        PlayerPrefs.SetString(usernameKey, channelName.text);
     }
-
-    public void OnCountdownEnd()
+    
+    private void PrintErrorMessage(string message, Color c)
     {
-        loading.SetActive(false);
-        tryingToConnect = false;
-        errorText.SetActive(true);
-        modifyInputStatus(true);
-        timer = 0;
-    }
-
-    public void OnInputChanged()
-    {
-        errorText.SetActive(false);
-        startButton.interactable = true;
-    }
-
-    private void modifyInputStatus(bool status)
-    {
-        usernameField.enabled = status;
-        channelNameField.enabled = status;
-        passwordField.enabled = status;
+        errorText.SetText(message);
+        errorText.color = c;
     }
 }
